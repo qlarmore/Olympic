@@ -1,0 +1,21 @@
+.post-form
+  = simple_form_for Message.new , html: { id: "post-form", multipart: true } do |f|
+    = text_field_tag "user_ids", user.id, class: 'token-input', id: 'token-user'
+    = f.input :message, label: false, input_html: { class: "chat-area" }, placeholder: t("send_message")
+    .image-attach-box
+    .upload-file-progress.hide
+      .bar
+        .percent
+  .option-box
+    .file-btn
+      = render partial: '/assets/form', locals: { id: nil }
+      %i.fa.fa-camera-retro
+    = link_to t("send"), "javascript:void(0);", class: "btn main-btn btn_form_js", data: { close: true }
+
+  :javascript
+    $(document).ready(function() {
+      $('#token-user').tokenInput("#{complite_users_path}").tokenInput('add', { id: #{user.id}, full_name: '#{user.full_name}' });
+      $('#send-message').on('click', function() {
+        $('#token-user').tokenInput('add', { id: #{user.id}, full_name: '#{user.full_name}' });
+      });
+    });

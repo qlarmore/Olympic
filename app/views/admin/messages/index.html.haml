@@ -1,0 +1,8 @@
+%h1= t('messages_list')
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= t('creator')
+      %th= t('messages_edit')
+  %tbody
+    = render @messages

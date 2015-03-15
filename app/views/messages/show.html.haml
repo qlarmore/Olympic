@@ -1,0 +1,4 @@
+.messages-content.clearfix
+  %ul.messages.striped
+    = render partial: 'message', collection: @conversation.mark_as_read(current_user), as: :message
+  = render partial: "form", locals: { conversation: @conversation }

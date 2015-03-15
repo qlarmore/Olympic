@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @message] do |f|
+  .form-inputs
+  .field= f.input :message, required: false, label: t('messages1')
+  .form-actions
+    = link_to t('back'), :back, class: "btn main-btn"
+    = f.button :submit, class: "btn main-btn"
+    = link_to t('delete'), [:admin, @message], data: { confirm: 'Are you sure?' }, class: "btn main-btn",  method: :delete

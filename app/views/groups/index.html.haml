@@ -1,0 +1,9 @@
+.line
+  = t('groups')
+  = link_to t("new_group"), new_group_path, class: "new_group_link" if current_user
+-if @groups.any?
+  .infinity-scroll
+    %ul.striped
+      = render @groups
+      .nav#page_nav
+        = link_to '', groups_path(@group, page: 2)

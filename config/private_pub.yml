@@ -1,0 +1,10 @@
+# development:
+#   server: "http://192.168.0.102:9292/faye/faye"
+#   secret_token: "secret"
+# test:
+#   server: "http://localhost:9292/faye"
+#   secret_token: "secret"
+# production:
+#   server: "https://hutory.com/faye/faye"
+#   secret_token: "62263c05401dcd6a2a91179a08633fa79003897572fdc8f48bcdfd5dd887be7c"
+#   signature_expiration: 3600 # one hour

@@ -1,0 +1,5 @@
+%h1= t("handler.messages.sign_in")
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.input :nick_name, required: false, autofocus: true, label: t("login")
+  = f.input :password, required: false, label: t("pass")
+  = f.button :submit, t("handler.messages.sign_in"), class: "btn main-btn"

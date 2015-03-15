@@ -1,0 +1,18 @@
+%li
+  .chat-post-box
+    .avatar
+      = image_tag message.user.avatar.size50
+    .post-content-column
+      .name
+        %p= message.user.display_name
+      .info
+        %p= message.message.try(:gsub, /\n/, '<br>').try(:html_safe)
+        - if message.assets.any?
+          .post-images.zoom-gallery
+            - message.assets.each do |asset|
+              %a{href: asset.avatar}
+                = image_tag asset.avatar.size70
+    .time
+      - if message.created_at.day != Time.now.day
+        %p= l(message.created_at, format: :long)
+      %p= l(message.created_at, format: :short)

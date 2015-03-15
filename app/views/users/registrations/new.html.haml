@@ -1,0 +1,19 @@
+.pading-block  
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .user-data
+      %h3= t("registration")
+      .box
+        = f.input :nick_name, required: true, autofocus: true, label: t("login")
+        = f.input :password, required: true, label: t("pass")
+        = f.input :password_confirmation, required: true, label: t("repeat_pass")
+        
+        = f.input :first_name, required: true, label: t("surname")
+        = f.input :last_name, required: true, label: t("name")
+        = f.input :number, required: true, label: t("mobile_number")
+        = f.input :birthday, required: true, label: t("date_of_birthday")
+        = f.input :avatar, required: true, label: t("photo")
+    .form-actions
+      = f.button :submit, t("registration"), class: 'btn main-btn'
+= render "users/shared/links"
+
+

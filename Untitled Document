@@ -1,0 +1,31 @@
+h = { "first.second" = 1, "first.thrid" => 2 } 
+z = {}
+h.each_pair do |h_key, h_value|
+  h_key = h_key.split(".").first
+  h_key2 = h_key.split(".").second
+  z.each_pair do |z_key, z_value|
+    if z.empty?
+      z = {h_key => { h_key2 => h_value }}
+    else
+      z_value[h_key2] = h_value
+    end
+  end 
+end
+
+ def self.parse(header, row)
+    resp = {}
+    params = Hash[header.zip(row)]
+    params.each do |k, v|
+      resp.merge!(self.to_hash(k, v)) { |k, old_v, new_v| old_v.merge(new_v) }
+    end
+    resp
+  end
+
+  def self.to_hash(k, v)
+    hash = {}
+    k.split('.').reverse_each do |key|
+      hash = { key => v }
+      v = hash
+    end
+    hash
+  end

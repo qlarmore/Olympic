@@ -1,0 +1,34 @@
+%li.close-js.infinity-item{id: "post_#{post.id}", class: "#{'comment not-striped' if post.comment?}"  }
+  .post-box
+    .avatar
+      = image_tag post.user.avatar.size50
+    .info
+      .name
+        = post.user.display_name
+      .post-content
+        = post.message.try(:gsub, /\n/, '<br>').try(:html_safe)
+      - if post.assets.any?
+        .post-images.zoom-gallery
+          - post.assets.each do |asset|
+            %a{href: asset.avatar}
+              = image_tag asset.avatar.size70
+      - if current_user
+        .option
+          - if current_user.try(:can_write_create_post?, post.group)
+            - unless post.comment?
+              %span= link_to t("comment"), stub_path, class: 'comment-link', id: "comment-link-#{post.id}"
+              %span.comment-count{id: "comment-count-#{post.id}"} (#{post.comments.size})
+            = render partial: 'posts/like', locals: { post: post }
+            - if current_user.is_post_creator?(post)
+              .on-hover.hide
+                = link_to stub_path, class: "btn_js edit-link" , data: { action: edit_group_post_path(resource, post), method: :get, show_method: "replace", target: "#post_#{post.id}" } do
+                  %i.fa.fa-pencil
+                = link_to stub_path, class: "btn_js destroy-link" , data: { action: group_post_path(resource, post), method: :delete, show_method: "replace", target: "#post_#{post.id}" } do
+                  %i.fa.fa-times 
+      - unless post.comment?
+        .comment-content{id: "comment_content_#{post.id}"}
+          - if current_user.try(:can_write_create_post?, resource)
+            .comment-form.hide
+              = render partial: '/posts/comment_form', locals: { group: resource, post: post }
+          %ul
+            = render partial: '/posts/post', collection: post.comments, as: :post 

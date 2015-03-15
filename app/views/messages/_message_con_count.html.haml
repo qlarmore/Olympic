@@ -1,0 +1,3 @@
+- if user.unread_messages_for(conversation).any?
+  .unread
+    %i.fa.fa-envelope (#{user.unread_messages_for(conversation).size})

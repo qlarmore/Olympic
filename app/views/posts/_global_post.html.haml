@@ -1,0 +1,22 @@
+%li.infinity-item
+  .global-post-box.close-js{id: "post_#{post.id}"}
+    - if current_user.try(:is_post_creator?, post)
+      .on-hover.hide
+        = link_to stub_path, class: "btn_js edit-link" , data: { action: edit_group_post_path(post.group, post, global: true), method: :get, show_method: "replace", target: "#post_#{post.id}" } do
+          %i.fa.fa-pencil
+        = link_to stub_path, class: "btn_js destroy-link" , data: { action: group_post_path(post.group, post, global: true), method: :delete, show_method: "replace", target: "#post_#{post.id}" } do
+          %i.fa.fa-times 
+    .info
+      .images
+        - if post.assets.any?
+          .top-image= image_tag(post.assets.first.avatar)
+          .post-images.zoom-gallery
+            - post.assets[1..-1].each do |asset|
+              %a{href: asset.avatar}
+                = image_tag asset.avatar.size70
+      .text
+        %p= post.message
+    .option
+      = link_to t("read_more"), group_path(post.group)
+      - if current_user.try(:can_write_create_post?, post.group)
+        = render partial: 'posts/like', locals: {post: post}

@@ -1,0 +1,11 @@
+%h1= t('users_list')
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= t('picture')
+      %th= t('user_name')
+      %th= t('email')
+      %th= t('mobile_number')
+      %th= t('date_of_birthday')
+  %tbody
+    = render @users

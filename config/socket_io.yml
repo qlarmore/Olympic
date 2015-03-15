@@ -1,0 +1,11 @@
+{
+  "production": {
+    "server": "https://hutory.com",
+  }, 
+  "development": {
+    "server": "localhost:3000",
+  },
+  "default": {
+    "server": "http://0.0.0.0:3001",
+  }
+}

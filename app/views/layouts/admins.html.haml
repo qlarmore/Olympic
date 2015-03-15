@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Olympic
+    = csrf_meta_tags
+    = stylesheet_link_tag "admin", :media => "all"
+    /[if gt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    = javascript_include_tag "application"
+  %body
+    .wrapper
+      .header
+      .main
+        .menu.navbar-inner
+          .iner
+            - if current_admin
+              = link_to t('Пользователи'), admin_users_path, class: "btn btn-default btn-lg disabled"
+              = link_to t('Группы'), admin_groups_path, class: "btn btn-default btn-lg disabled"
+              = link_to t('Посты'), admin_posts_path, class: "btn btn-default btn-lg disabled"
+              = link_to t('Сообщения'), admin_messages_path, class: "btn btn-default btn-lg disabled"
+              .link
+                = link_to t("Пользовательская часть"), root_path, class: "btn btn-danger"
+                = link_to t("Выйти"), destroy_user_session_path, class: "btn btn-danger", method: :delete
+        .inner
+          .main-box
+            = yield

@@ -1,0 +1,18 @@
+.line
+  = t('friends')
+  .post-autocomplete-form#search-friends
+    = form_tag(stub_path, :method => "get", id: "friends-search") do
+      = hidden_field_tag :status, "approved"
+      = text_field_tag :search, params[:search], placeholder: t("input_smth"), class: "autocomplete", data: { target: ".friends-content .tab", show_method: "html"}
+.friends-content
+  .tabs
+    = link_to stub_path, class:  "btn_js type #{'current' if params[:type] == Invitation::TYPE.first || params[:type].nil?}", data: { action: invitations_path(type: "approved"), method: :get, target: ".friends-content .tab", show_method:"html"} do
+      #{t("friends")}
+    = link_to stub_path, class:  "btn_js type #{'current' if params[:type] == Invitation::TYPE.second}", data: { action: invitations_path(type: "pending"), method: :get, target: ".friends-content .tab", show_method:"html"} do
+      #{t("friend_requests")}
+    = link_to stub_path, class:  "btn_js type #{'current' if params[:type] == Invitation::TYPE.third}", data: { action: invitations_path(type: "rejected"), method: :get, target: ".friends-content .tab", show_method:"html"} do
+      #{t("decline_friends")}
+  %ul.tab.striped
+    = render partial: 'approved', collection: @users, as: :user
+  
+

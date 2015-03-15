@@ -1,0 +1,48 @@
+.post-form
+  = simple_form_for Message.new, url: chats_path, remote: true, html: { id: "post-form" } do |f|
+    = hidden_field_tag :conversation_id, conversation.id
+    .write
+    = f.input :message, label: false, input_html: { class: "chat-area" }
+    .image-attach-box
+    .upload-file-progress.hide
+      .bar
+        .percent
+  .option-box
+    .file-btn
+      = render partial: '/assets/form', locals: { id: nil }
+      %i.fa.fa-camera-retro
+    = link_to t("send"), "javascript:void(0);", class: "btn main-btn btn_form_js", id: "send-message"
+
+
+:javascript
+  var timer, write = false;
+  $('.messages').scrollTop($('.messages')[0].scrollHeight + 100);
+  var socket = io.connect("#{SOCKET_IO['server']}");
+  socket.on('/messages/#{conversation.id}', function(data) {
+    $('.messages').append(data.msg_body);
+    $('.messages').scrollTop($('.messages')[0].scrollHeight + 100);
+    $('.write #writer_' + data.id).remove();
+    clearTimeout(timer);
+    write = false;
+  });
+  socket.on('/messages/#{conversation.id}/write', function(data) {
+    if (data.write) {
+      if ($('.write #writer_' + data.id).length > 0) {
+      } else {
+        $('.write').append("<span id='writer_" + data.id + "'>" + data.message + "</span>");
+      }
+    } else {
+      $('.write #writer_' + data.id).remove();
+    }
+  });
+  $('.chat-area').on('keydown', function() {
+    clearTimeout(timer);
+    if (!write) { 
+      socket.emit('write', { channel: '/messages/#{conversation.id}/write', data: { write: true, message: '#{current_user.full_name}', id: #{current_user.id} } });
+      write = true;
+    }
+    timer = setTimeout(function() {
+      socket.emit('write', { channel: '/messages/#{conversation.id}/write', data: { write: false, id: #{current_user.id} } });
+      write = false;
+    }, 3000);
+  });

@@ -1,0 +1,7 @@
+%span.like{id: "post-like-#{post.id}"}   
+  = link_to stub_path, class: "btn_js", data: { action: like_group_post_path(post.resource, post), method: :post, target: "#post-like-#{post.id}", show_method:"html"} do
+    %i.fa.fa-thumbs-up (#{post.get_likes.size})
+  = link_to stub_path, class: "btn_js", data: { action: dislike_group_post_path(post.resource, post), method: :post, target: "#post-like-#{post.id}", show_method:"html"} do
+    %i.fa.fa-thumbs-down (#{post.get_dislikes.size})
+	  
+

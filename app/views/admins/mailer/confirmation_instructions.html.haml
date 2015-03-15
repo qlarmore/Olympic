@@ -1,0 +1,4 @@
+%p
+  = t("welcome") @email!
+%p= t("handler.messages.acc_confirm_full"):
+%p= link_to t("handler.messages.acc_confirm"), confirmation_url(@resource, confirmation_token: @token)

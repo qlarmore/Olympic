@@ -1,0 +1,242 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-15 15:14:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `posts` WHERE `posts`.`deleted_at` IS NULL AND `posts`.`global` = 1 LIMIT 10 OFFSET 0) subquery_for_count
+  Rendered main/index.html.haml within layouts/application (9.8ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`deleted_at` IS NULL ORDER BY `posts`.`id` DESC LIMIT 10[0m
+Completed 200 OK in 709ms (Views: 690.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+Processing by MainController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `posts` WHERE `posts`.`deleted_at` IS NULL AND `posts`.`global` = 1 LIMIT 10 OFFSET 0) subquery_for_count
+  Rendered main/index.html.haml within layouts/application (1.4ms)
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`deleted_at` IS NULL ORDER BY `posts`.`id` DESC LIMIT 10[0m
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/gritter.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery.remodal.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/magnific-popup.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/popover.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/token-input.css?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/accordion.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/menu.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/autocomplete.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:54 +0200
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/droppable.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-blind.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-bounce.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-clip.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-drop.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-explode.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-fade.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-fold.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-highlight.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-size.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-scale.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-puff.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-pulsate.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-shake.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-slide.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/effect-transfer.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/progressbar.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/selectable.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/selectmenu.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/slider.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/spinner.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui/tooltip.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/gritter.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.infinitescroll.min.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/form.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.form.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.magnific-popup.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.remodal.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.serializeJson.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/jquery.tokeninput.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/popover.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+
+Started GET "/javascripts/localhost:3000/socket.io/socket.io.js" for 127.0.0.1 at 2015-03-15 15:14:55 +0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/localhost:3000/socket.io/socket.io.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.0.2) lib/rails/commands/server.rb:84:in `start'
+  railties (4.0.2) lib/rails/commands.rb:76:in `block in <top (required)>'
+  railties (4.0.2) lib/rails/commands.rb:71:in `tap'
+  railties (4.0.2) lib/rails/commands.rb:71:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/bodik/.rvm/gems/ruby-2.1.5@olympic/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/bodik/.rvm/gems/ruby-2.1.5@olympic/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/bodik/.rvm/gems/ruby-2.1.5@olympic/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /home/bodik/.rvm/gems/ruby-2.1.5@olympic/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (96.6ms)
+
+
+Started GET "/assets/logo3.jpg" for 127.0.0.1 at 2015-03-15 15:14:55 +0200

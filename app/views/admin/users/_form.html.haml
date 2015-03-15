@@ -1,0 +1,12 @@
+= simple_form_for [:admin, @user] do |f|
+  .form-inputs
+  .field= f.input :first_name, label: t('activerecord.attributes.user.last_name')
+  .field= f.input :last_name, label: t('activerecord.attributes.user.first_name')
+  .field= f.input :number, label: t('activerecord.attributes.user.number')
+  .field= f.input :role, collection: User::ROLES, label: t('activerecord.attributes.user.role')
+  .field= f.input :birthday, label: t('activerecord.attributes.user.birthday')
+  .form-actions
+    = link_to t("user_sign_in"), admin_user_login_path(@user), class: "btn main-btn"
+    = link_to t('back'), :back, class: "btn main-btn"
+    = f.button :submit, class: "btn main-btn"
+    = link_to t('delete'), [:admin, @user], data: { confirm: 'Are you sure?' }, class: "btn main-btn",  method: :delete

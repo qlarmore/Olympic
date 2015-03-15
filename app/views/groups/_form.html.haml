@@ -1,0 +1,9 @@
+= simple_form_for @group do |f|
+  .form_row
+    = f.input :name, label: t('title')
+  .form_row
+    = f.input :description, label: t('description')
+  .form_row
+    = f.input :avatar, as: :file, label: t('logo')
+  .form_row
+    = f.button :submit, t("save"), class: "btn main-btn"

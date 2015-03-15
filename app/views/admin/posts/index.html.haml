@@ -1,0 +1,9 @@
+%h1= t('post_list')
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= t('user_name')
+      %th= t('group')
+      %th= t('messages_edit')
+  %tbody
+    = render @posts

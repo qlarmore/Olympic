@@ -1,0 +1,22 @@
+.post-box{id: "post_#{post.id}"}
+  .post-form
+    = simple_form_for [resource, post] , html: { id: "post-form", multipart: true } do |f|
+      = hidden_field_tag :global, global
+      = f.input :parent_id, as: :hidden, input_html: { value: post.parent.id } if post.parent
+      = f.input :message, label: false, input_html: { class: "edit-message-area" }
+      .image-attach-box
+        - post.assets.each do |asset|
+          .upload-avatar
+            = image_tag(asset.avatar.size70)
+            %i.fa.fa-times.close
+            = text_field_tag "assets[avatar_ids][]", asset.id, class: "hide"
+      .upload-file-progress.hide
+        .bar
+          .percent
+    .option-box
+      .file-btn
+        = render partial: '/assets/form', locals: { id: post.id }
+        %i.fa.fa-camera-retro
+      - if current_user.is_admin? and !post.parent
+        %span= f.input :global, inline_label: t("duplicate_on_main_page"), label: false unless post.parent
+      = link_to t("send"), "javascript:void(0);", class: "btn main-btn btn_form_js", data: { show_method: "replace", target: "#post_#{post.id}" }

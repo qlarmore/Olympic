@@ -1,0 +1,8 @@
+%h1= t('group_list')
+%table.table.table-bordered
+  %thead
+    %tr
+      %th= t('picture')
+      %th= t('group_name')
+  %tbody
+    = render @groups

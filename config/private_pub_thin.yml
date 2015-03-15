@@ -1,0 +1,6 @@
+# port: 9292
+# timeout: 120
+# environment: production
+# daemonize: true
+# pid: /tmp/pids/private_pub.pid
+# rackup: private_pub.ru

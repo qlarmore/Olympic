@@ -1,0 +1,18 @@
+/*
+ *= require bootstrap_and_overrides
+ */
+
+ 
+h1 {
+  text-align: center;
+}
+.main-box{
+  text-align: center;
+}
+
+.iner {
+	padding-top:5px;
+}
+.link {
+  float: right;
+}

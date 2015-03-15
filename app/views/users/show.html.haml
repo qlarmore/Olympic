@@ -1,0 +1,39 @@
+.user-content
+  .left-column
+    .avatar
+      = image_tag @user.avatar
+    .user-action
+      - if current_user==@user
+        = link_to t("edit"), edit_user_path, class: 'btn main-btn'
+      - if current_user and current_user != @user
+        = link_to t("send_message"), '#message-popup', class: 'btn main-btn', id: 'send-message'
+        - unless current_user.invited?(@user) || current_user.friend?(@user)
+          = link_to t("friend_request"), stub_path, id: 'friend_btn', class: 'btn main-btn btn_js', data: {action: invite_friend_user_path(), method: :get, show_method:"remove", target: "#friend_btn"}
+        - if current_user.invited?(@user)
+          = link_to t("cancel_request"), stub_path, id: 'cancel_friend_btn', class: 'btn main-btn btn_js', data: {action: reject_friend_user_path(), method: :get, show_method:"remove", target: "#cancel_friend_btn"}
+        - if current_user.friend?(@user)
+          = link_to t("delete_from_friends"), stub_path, id: 'cancel_friend_btn', class: 'btn main-btn btn_js', data: {action: reject_friend_user_path(), method: :get, show_method:"remove", target: "#cancel_friend_btn"}
+  .right-column
+    .name
+      %span.label #{t('name')}:  
+      #{@user.full_name} (#{@user.nick_name})
+    .date
+      - if @user.show_birthbay == true
+        %span.label #{t('date_of_birthday')}: 
+        = @user.birthday
+    .tel
+      - if @user.show_number == true
+        %span.label #{t('mobile_number')}: 
+        = @user.number
+
+  .post-block
+    .post_form  
+      = render partial: '/posts/form', locals: { post: Post.new }
+    %ul.content-posts.striped
+      = render partial: '/posts/post', collection: @user.posts, as: :post
+
+- if current_user and current_user != @user
+  #message-popup.modal.hide{ data: { remodal: { id: "message-popup" } } }
+    .madal-header
+      =t('new_message')
+    = render partial: 'users/form', locals: { user: @user }

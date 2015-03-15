@@ -1,0 +1,9 @@
+%li
+  .friend-box{id: "rejected-#{user.id}"}
+    .avatar
+      = image_tag(user.avatar)
+    .info
+      .name= user.display_name
+    .action
+      %p= link_to t("restore_friend"), stub_path, id: 'cancel_friend_btn', class: 'btn_js', data: {action: invite_friend_user_path(user), method: :get, show_method:"remove", target: "#rejected-#{user.id}"}
+

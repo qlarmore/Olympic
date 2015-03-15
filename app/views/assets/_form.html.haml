@@ -1,0 +1,2 @@
+= form_tag Asset.new, id: id ? "upload-form-#{id}" : 'upload-form', class: 'upload-form', multipart: true do
+  = file_field_tag "assets[avatar][]", class: "avatar-choise", multiple: true

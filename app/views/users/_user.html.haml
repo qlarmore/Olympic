@@ -1,0 +1,7 @@
+%li
+  .user-box
+    .avatar
+      = link_to image_tag(user.avatar.size70), user_path(user)
+    .info
+      %p.name= link_to user.display_name, user_path(user)
+      %p= user_status(user, true)

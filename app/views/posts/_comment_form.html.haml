@@ -1,0 +1,13 @@
+.post-form
+  = simple_form_for [resource, Post.new] , html: { id: "post-form", multipart: true } do |f|
+    = f.input :parent_id, as: :hidden, input_html: { value: post.id }
+    = f.input :message, label: false, input_html: { class: "message-area" }
+    .image-attach-box
+    .upload-file-progress.hide
+      .bar
+        .percent
+  .option-box.hide
+    .file-btn
+      = render partial: '/assets/form', locals: { id: post.try(:id) }
+      %i.fa.fa-camera-retro
+    = link_to t("send"), "javascript:void(0);", class: "btn main-btn btn_form_js", data: { target: "#comment_content_#{post.id}", show_method: "append" }

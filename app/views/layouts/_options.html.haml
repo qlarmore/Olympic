@@ -1,0 +1,16 @@
+%ul
+- if current_user.is_member?(@group)
+  %li.group-options
+    = link_to exit_group_path(@group), method: :delete  do
+      %i.fa.fa-share.td #{t("leave_group")}
+- elsif current_user.is_creator?(@group)
+  %li.group-options
+    = link_to group_path(group), method: :delete do 
+      %i.fa.fa-times.td #{t("delete_group")}
+  %li.group-options
+    = link_to group_path(group) do 
+      %i.fa.fa-pencil-square-o #{t("edit_group")}
+- else
+  %li.group-options
+    = link_to entry_group_path(@group), method: :post do
+      %i.fa.fa-share.td #{t("join_group")}

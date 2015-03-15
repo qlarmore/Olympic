@@ -1,0 +1,8 @@
+%h2= t("enter")
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-inputs
+    = f.input :nick_name, required: false, autofocus: true, label: t("login")
+    = f.input :password, required: false, label: t("pass")
+  .form-actions
+    = f.button :submit, t("sign_in"), class: "btn main-btn"
+

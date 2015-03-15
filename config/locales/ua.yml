@@ -1,0 +1,444 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ua:
+  date:
+    abbr_day_names:
+    - нд.
+    - пн.
+    - вт.
+    - ср.
+    - чт.
+    - пт.
+    - сб.
+    abbr_month_names:
+    -
+    - січ.
+    - лют.
+    - бер.
+    - квіт.
+    - трав.
+    - черв.
+    - лип.
+    - серп.
+    - вер.
+    - жовт.
+    - лист.
+    - груд.
+    day_names:
+    - неділя
+    - понеділок
+    - вівторок
+    - середа
+    - четвер
+    - п'ятниця
+    - субота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - Січня
+    - Лютого
+    - Березня
+    - Квітня
+    - Травня
+    - Червня
+    - Липня
+    - Серпня
+    - Вересня
+    - Жовтня
+    - Листопада
+    - Грудня
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: близько %{count} години
+        many: близько %{count} годин
+        one: близько %{count} година
+        other: близько %{count} години
+      about_x_months:
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        one: близько %{count} місяця
+        other: близько %{count} місяця
+      about_x_years:
+        few: близько %{count} років
+        many: близько %{count} років
+        one: близько %{count} року
+        other: близько %{count} року
+      almost_x_years:
+        few: майже %{count} років
+        many: майже %{count} років
+        one: майже %{count} роки
+        other: майже %{count} років
+      half_a_minute: півхвилини
+      less_than_x_minutes:
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        one: менше %{count} хвилини
+        other: менше %{count} хвилини
+      less_than_x_seconds:
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        one: менше %{count} секунди
+        other: менше %{count} секунди
+      over_x_years:
+        few: більше %{count} років
+        many: більше %{count} років
+        one: більше %{count} року
+        other: більше %{count} року
+      x_days:
+        few: ! '%{count} дні'
+        many: ! '%{count} днів'
+        one: ! '%{count} день'
+        other: ! '%{count} дня'
+      x_minutes:
+        few: ! '%{count} хвилини'
+        many: ! '%{count} хвилин'
+        one: ! '%{count} хвилина'
+        other: ! '%{count} хвилини'
+      x_months:
+        few: ! '%{count} місяці'
+        many: ! '%{count} місяців'
+        one: ! '%{count} місяць'
+        other: ! '%{count} місяця'
+      x_seconds:
+        few: ! '%{count} секунди'
+        many: ! '%{count} секунд'
+        one: ! '%{count} секунда'
+        other: ! '%{count} секунди'
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунда
+      year: Рік
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: має бути прийнятий
+      blank: не може бути пустим
+      confirmation: не збігається з підтвердженням
+      empty: не може бути порожнім
+      equal_to: має дорівнювати %{count}
+      even: має бути парним
+      exclusion: зарезервовано
+      greater_than: має бути більше ніж %{count}
+      greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
+      inclusion: не включено до переліку
+      invalid: недійсний
+      less_than: має бути менше ніж %{count}
+      less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+      not_a_number: не число
+      not_an_integer: не э цілим числом
+      odd: має бути непарним
+      record_invalid: ! 'Виникли помилки: %{errors}'
+      taken: вже зайнятий
+      too_long:
+        few: занадто довгий (максимум %{count} знаки)
+        many: занадто довгий (максимум %{count} знаків)
+        one: занадто довгий (максимум %{count} знак)
+        other: занадто довгий (максимум %{count} знаку)
+      too_short:
+        few: занадто короткий (мінімум %{count} знаки)
+        many: занадто короткий (мінімум %{count} знаків)
+        one: занадто короткий (мінімум %{count} знак)
+        other: занадто короткий (мінімум %{count} знаку)
+      wrong_length:
+        few: неправильна довжина (має бути %{count} знаки)
+        many: неправильна довжина (має бути %{count} знаків)
+        one: неправильна довжина (має бути %{count} знак)
+        other: неправильна довжина (має бути %{count} знаку)
+    template:
+      body: ! 'Помилки виявлено в таких полях:'
+      header:
+        few: ! '%{model} не збережено через %{count} помилки'
+        many: ! '%{model} не збережено через %{count} помилок'
+        one: ! '%{model} не збережено через %{count} помилку'
+        other: ! '%{model} не збережено через %{count} помилки'
+  helpers:
+    select:
+      prompt: ! 'Оберіть: '
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Зберегти %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            few: Мільярдів
+            many: Мільярдів
+            one: Мільярд
+            other: Мільярдів
+          million:
+            few: Мільйонів
+            many: Мільйонів
+            one: Мільйон
+            other: Мільйонів
+          quadrillion:
+            few: Квадрильйонів
+            many: Квадрильйонів
+            one: Кквадрильйон
+            other: Квадрильйонів
+          thousand:
+            few: Тисяч
+            many: Тисяч
+            one: Тисяча
+            other: Тисяч
+          trillion:
+            few: Трильйонів
+            many: Трильйонів
+            one: Трильйон
+            other: Трильйонів
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            few: байти
+            many: байтів
+            one: байт
+            other: байту
+          gb: ГБ
+          kb: кБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' та '
+      two_words_connector: ! ' і '
+      words_connector: ! ', '
+  time:
+    am: до полудня
+    formats:
+      default: ! '%d %b %Y, %H:%M:%S'
+      long: ! '%d.%m.%y'
+      short: ! '%H:%M:%S'
+    pm: по полудні
+  activerecord:
+    models:
+      user: Користувач
+      admin: "Адмін"
+      asset: "Активи"
+      friend_user: "Друг користувач"
+      conversation: "Чати"
+      group: "Групи"
+      group_user: "Групи користувача"
+      message: "Повідомлення"
+      post: "Пости"
+      receipt: "Отримування"
+    attributes:
+      user:
+        email: "Email"
+        first_name: "Ім'я"
+        last_name: "Фамілія"
+        nick_name: "Нік"
+        birthday: "День народження"
+        number: "Номер телефону"
+        role: "Роль"
+      admin:
+        email: "Email"
+      group:
+        name: "Ім'я"
+        description: "Опис"
+      message:
+        message: "Повідомлення"
+      post:
+        message: "Повідомлення"
+          
+  hello: "Привіт"
+  Write: "Написати"
+  Friendship: "Дружити"
+  name: "Ім’я"
+  date_of_birthday: "Дата народження"
+  mobile_number: "Номер телефону"
+  new_message: "Нове повідомлення"
+  title: "Назва"
+  description: "Опис"
+  logo: "Логотип"
+  save: "Зберегти"
+  messages: "Повідомлень"
+  participant: "Учасників"
+  participants: "Учасники"
+  new_group: "Нова група"
+  leave_group: "Покинути групу"
+  delete_group: "Видалити групу"
+  edit_group: "Редактувати групу"
+  join_group: "Вступити до групи"
+  exit: "Вийти"
+  enter: "Вхід"
+  sign_in: "Ввійти"
+  email: "email"
+  sign_in_through: "Ввійти через"
+  user_sign_in: "Увійти як користувач"
+  registration: "Регістрація"
+  news: "Новини"
+  groups: "Спільноти"
+  messages1: "Повідомлення"
+  users: "Користувачі"
+  send: "Відправити"
+  recover: "Відновити"
+  duplicate_on_main_page: "Дублювати на головну сторінку"
+  read_more: "Читати далі"
+  comment: "Коментувати"
+  login: "Логін"
+  surname: "Фамілія"
+  repeat_pass: "Повторити пароль"
+  pass: "Пароль"
+  photo: "Фото"
+  forget_pass: "Забули пароль?"
+  send_message: "Написати повідомлення"
+  language: "Змінити мову"
+  update: "Оновити"
+  edit: "Змінити"
+  user_name: "Ім’я користувача"
+  group_desription: "Опис групи"
+  back: "Назад"
+  delete: "Видалити"
+  editing: "Редактування"
+  group_list: "Список груп"
+  group_name: "Назва групи"
+  picture: "Аватарка"
+  messages_list: "Список повідомлень"
+  creator: "Автор"
+  messages_edit: "Повідомлення/Редактування"
+  post_list: "Список постів"
+  group: "Спільнота"
+  users_list: "Список користувачів"
+  change_user_data: "Змінити дані профайлу"
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      auth_failed: "авторизація не вдалася!"
+
+  success:
+    messages:
+      sent: "Повідомлення відправлено"
+      destroyed: "Пост видалений успішно"
+      restore: "Пост відновлений успішно"
+  error:
+    messages:
+      standart: "Sorry, but something went wrong"
+
+  handler:
+    messages:
+      resend_confirmation: "Відправити повторно листа з підтвердженням"
+      acc_confirm: "Підтвердити акаунт"
+      acc_confirm_full: "Ви можете підтвердити аккаунт натиснувши на посилання нижче"
+      unlock: "Ваш аккаунт блокований через великої кількості спроб несанкціонованого доступу"
+      unlock_below: "Натисніть на посилання нижче, щоб розблокувати свій акаунт"
+      unlock_link: "Розблокувати акаунт"
+      reset: "Ви запросили посилання для зміни пароля Ви можете зробити це через посилання нижче."
+      change: "Змінити пароль"
+      ignore: "Якщо ви не відсилали запит просто ігноруйте це повідомлення"
+      didnot: "Ваш пароль не буде змінений до того як Ви натиснете на посилання"
+      confirm: "Підтвердити новий пароль"
+      new: "Новий пароль"
+      instructions: "Відправити мені інструкції по зміні пароля"
+      current_confirm: "В даний час в очікуванні підтвердження для"
+      leave: "Покиньте цю сторінку, якщо не хочете змінювати пароль"
+      current_pass: "Нам потрібен Ваш старий пароль щоб зміни вступили в силу"
+      cancel_account: ""
+      sign_up: "Зареєструватись"
+      sign_in: "Увійти"
+      didnot_receive: "Не отримали підтвердження?"
+      didnot_unlock: "Не отримали інструкції розблокування?"
+      sign_in_like: "Увійти як"
+      resend: "Переслати інструкції"
+
+  validate:
+    messages:
+      length: ""
+
+  personal_setting: "Особисті налаштування"
+  account: "Акаунт"
+  show_status_time_of_enter: "Показувати статус і час входу"
+  show_date: "Показувати дату народження"
+  show_number: "Показувати номер телефону"
+  allow_invite: "Дозволити запрошувати меня до друзів"
+  allow_posts: "Дозволити залишати на особистій сторінці пости"
+  allow_comment: "Дозволити коментувати мої пости"
+  allow_private: "Дозволити писати мені особисті повідомлення"
+  show_photos: "Показувати мої фото"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+
+  followed: "Запит надіслано"
+  unfollow: "Ви відмінили запит на дружбу"
+  accept: "Ви прийняли запит на дружбу"
+  recover: "Користувач відновлений в списку друзів"
+  friend_request: "Дружити"
+  cancel_request: "Скасувати запит"
+  delete_from_friends: "Видалити з друзів"
+  friend_requests: "Запрошення"
+  friends: "Друзі"
+  decline_friends: "Архів"
+  without_friends: "У Вас немає друзів"
+  accept: "Прийняти"
+  without_acceptions: "У Вас немає запрошень"
+  restore_friend: "Відновити друга"
+  without_rejected: "У Вас немає видалених друзів"
+  input_smth: "Введіть щось"
+  learn_more: "Дізнатись більше"
+  have_not_found: "Нічого не знайдено ("
+  search_for: "Шукати в:"
+  user: "Користувачах"
+  post: "Постах"
+  group: "Групах"

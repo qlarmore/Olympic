@@ -1,0 +1,8 @@
+= simple_form_for [:admin, @group] do |f|
+  .form-inputs
+  .field= f.input :name, required: false, label: t('user_name')
+  .field= f.input :description, required: false, label: t('group_desription')
+  .form-actions
+    = link_to t('back'), :back, class: "btn main-btn"
+    = f.button :submit, class: "btn main-btn"
+    = link_to t('delete'), [:admin, @group], data: { confirm: 'Are you sure?' }, class: "btn main-btn",  method: :delete

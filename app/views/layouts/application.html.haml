@@ -1,0 +1,73 @@
+!!!
+%html
+  %head
+    %title Olympic
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    /[if gt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    = javascript_include_tag "application"
+    = javascript_include_tag "#{SOCKET_IO['server']}/socket.io/socket.io.js"
+  %body
+    .wrapper       
+      .main.clearfix
+        .header
+          .top-menu
+            - if current_user
+              = link_to t("exit"), destroy_user_session_path, method: :delete
+            - else
+              = link_to t("registration"), new_user_registration_path
+              |
+              = link_to t("enter"), new_user_session_path
+          .menu
+            %ul
+              %li{class: "#{'active' if controller.controller_name == 'main'}"} 
+                = link_to t("news"), root_path
+              %li{class: "#{'active' if controller.controller_name == 'groups'}"}
+                = link_to t("groups"), groups_path
+              - if current_user
+                %li{class: "#{'active' if controller.controller_name == 'messages'}"}
+                  = link_to t("messages1"), messages_path
+                  %span.message-count= current_user.unread_messages_count
+                %li{class: "#{'active' if controller.controller_name == 'users'}"}
+                  = link_to t("users"), users_path
+                %li{class: "#{'active' if controller.controller_name == 'invitations'}"}
+                  = link_to t("friends"), invitations_path()
+        .main-box
+          .welcome
+            %p.big= t('welcome')
+            %p.small= t('portal')
+            %p.info= t('info')
+          .content
+            = yield
+        .side-bar
+          .top= t('activity')
+          .content
+            %ul
+              - Post.last(10).each do |post|
+                %li
+                  .image= image_tag post.user.avatar.size70
+                  .info
+                    %p.name
+                      = post.user.full_name
+                    = truncate(post.message, length: 70)
+                    |
+                    = link_to 'more', '#'
+          .bottom
+      .footer
+        %span © Bohdan Oshovskyi
+        %spam.len
+          = link_to 'Руский', set_locale_users_path(locale: "ru"), method: :post 
+          |
+          = link_to 'Українська', set_locale_users_path(locale: "ua"), method: :post
+          |
+          = link_to 'English', set_locale_users_path(locale: "en"), method: :post
+    
+    - if current_user
+      :javascript
+        var socket = io.connect("#{SOCKET_IO['server']}");
+        socket.on('/message/#{current_user.id}', function(data) {
+          $.each(data.data, function (i, m) {
+            $(m.target).html(m.html)
+          });
+        });

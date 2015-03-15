@@ -1,0 +1,14 @@
+.post-form
+  = simple_form_for [resource, Post.new] , html: { id: "post-form", multipart: true } do |f|
+    = f.input :message, label: false, input_html: { class: "message-area" }
+    .image-attach-box
+    .upload-file-progress.hide
+      .bar
+        .percent
+    - if current_user.is_admin?
+      %span= f.input :global, inline_label: t("duplicate_on_main_page"), label: false
+  .option-box.hide
+    .file-btn
+      = render partial: '/assets/form', locals: { id: post.try(:id) }
+      %i.fa.fa-camera-retro
+    = link_to t("send"), "javascript:void(0);", class: "btn main-btn btn_form_js", data: { target: ".content-posts", show_method: "prepend" }

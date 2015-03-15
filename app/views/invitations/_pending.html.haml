@@ -1,0 +1,8 @@
+%li
+  .friend-box{id: "invited-#{user.id}"}
+    .avatar
+      = image_tag(user.avatar)
+    .info
+      .name= user.display_name
+    .action
+      %p= link_to t("accept"), stub_path, id: 'accept_btn', class: 'btn_js', data: {action: invite_friend_user_path(user), method: :get, show_method:"remove", target: "#invited-#{user.id}"}

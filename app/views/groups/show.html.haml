@@ -1,0 +1,18 @@
+.line
+  = @group.name
+  .group-status
+    - if current_user
+      = link_to  "javascript:vouid(0)", rel:"popover", dataplacement:"bottom",  "data-content" => "#{render partial: "layouts/options", locals: { group: @group }}" do
+        %i.fa.fa-cog
+.group_avatar
+  = image_tag @group.avatar.size70
+.group_label
+  = @group.description
+.post-block
+  - if current_user.try(:can_write_create_post?, @group)
+    = render partial: "/posts/form", locals: { group: @group, post: Post.new }
+  .infinity-scroll
+    %ul.content-posts.striped
+      = render partial: '/posts/post', collection: @posts, as: :post
+    .nav#page_nav
+      = link_to '', group_path(@group, page: 2)

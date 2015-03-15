@@ -1,0 +1,17 @@
+%li
+  = link_to message_path(conversation), class: 'conversation-link' do
+    .conversation-box
+      .avatar
+        = image_tag(conversation.creator.avatar.size50)
+      .info
+        %p.name= conversation.creator.full_name
+        %p= user_status(conversation.creator, true)
+        %p.time= conversation.created_at.strftime("%d.%m в %H:%M:%S")
+      .last-message
+        - if conversation.last_message.user != current_user
+          .avatar
+            = image_tag conversation.last_message.user.avatar.size50
+        .info
+          %p= conversation.last_message.message
+      .count-box{id: "conversation_#{conversation.id}"}
+        = render partial: 'messages/message_con_count', locals: { conversation: conversation, user: current_user }

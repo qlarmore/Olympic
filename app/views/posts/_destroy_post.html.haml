@@ -1,0 +1,2 @@
+.post-box{id: "post_#{post.id}"}
+  = link_to t("recover"), stub_path, class: 'btn_js restore-link', data: { action: restore_group_post_path(resource, post, global: global), method: :post, show_method: "replace", target: "#post_#{post.id}" }

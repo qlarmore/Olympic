@@ -1,0 +1,16 @@
+%li.infinity-item
+  .group-box
+    = link_to group_path(group) do
+      .group-image-column
+        = image_tag(group.avatar.size70)
+      .group-content-column
+        .name
+          %span.label
+            #{t("title")}:
+          = group.name
+        .info
+          %span.label
+            #{t("description")}:
+          = group.description
+      .group-next
+        %i.fa.fa-share-square-o

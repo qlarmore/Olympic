@@ -1,0 +1,26 @@
+.pading-block
+  = simple_form_for(current_user)  do |f|
+    .user-data
+      %h3= t("account")
+      .box
+        = f.input :nick_name, required: true, autofocus: true, label: t("login")
+        = f.input :first_name, required: true, label: t("surname")
+        = f.input :last_name, required: true, label: t("name")
+        = f.input :number, required: true, label: t("mobile_number")
+        = f.input :birthday, required: true, label: t("date_of_birthday")
+        = f.input :avatar, required: true, label: t("picture")
+    .user-setting
+      %h3= t("personal_setting")
+      .box
+        = f.input :show_status, required: false, inline_label: t("show_status_time_of_enter"), label: false
+        = f.input :show_birthbay, required: false, inline_label: t("show_date"), label: false
+        = f.input :show_number, required: false, inline_label: t("show_number"), label: false
+        = f.input :invite_to_friend, required: false, inline_label: t("allow_invite"), label: false
+        = f.input :write_on_page, required: false, inline_label: t("allow_posts"), label: false
+        = f.input :comment_post, required: false, inline_label: t("allow_comment"), label: false
+        = f.input :write_private_message, required: false, inline_label: t("allow_private"), label: false
+        = f.input :show_image, required: false, inline_label: t("show_photos"), label: false
+
+    .form-actions
+      = f.submit "save", class: 'btn main-btn'
+

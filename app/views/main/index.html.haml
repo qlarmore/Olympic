@@ -1,0 +1,7 @@
+-if @top_posts.any?
+  .infinity-scroll
+    .line= t('top_post')
+    %ul.striped
+      = render partial: '/posts/global_post', collection: @top_posts, as: :post
+      .nav#page_nav
+        = link_to '', main_index_path(@top_post, page: 2)
